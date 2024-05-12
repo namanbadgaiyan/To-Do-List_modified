@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection{
+    color: rgb(220, 169, 39);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
