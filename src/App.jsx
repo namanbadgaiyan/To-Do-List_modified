@@ -26,6 +26,10 @@ function App() {
     
   }
   console.log(taskList);
+  const DeleteHandler = (id) => {
+    settaskList(taskList.filter((t)=> t.id !== id))
+    localStorage.setItem("taskList", JSON.stringify(taskList.filter((t)=> t.id !== id)))
+  }
 
   const CompleteHandler = (index) => {
     console.log(index);
@@ -74,16 +78,15 @@ function App() {
                     <h1 className={`${tasking.completed ? "line-through" : ""}
                     text-[1.5vw] font-bold`}>{tasking.task}</h1>
                   </div>
-                  <IoCloseCircleSharp className='text-[1.8vw] text-red-500' />
+                  <IoCloseCircleSharp className='text-[1.8vw] text-red-500' onClick={()=>{DeleteHandler(tasking.id)}} />
                 </div>  
               )
             
           }))
         :  (<h1 className='text-white font-semibold text-[1.5vw] text-center'>No Task Pending</h1>)
-        
         }
-       
-       
+
+
         </div>
       </div>
     </div>
