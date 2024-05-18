@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import { bhenjneWalaData } from "../context/DataContext";
 
-function Show(prop) {
-    const {taskList, settaskList} = prop
+function Show() {
+    const {taskList, settaskList} = useContext(bhenjneWalaData)
 
     const DeleteHandler = (id) => {
         settaskList(taskList.filter((t)=> t.id !== id))

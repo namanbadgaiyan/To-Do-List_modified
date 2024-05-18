@@ -1,6 +1,8 @@
+import { useContext } from "react"
+import { bhenjneWalaData } from "../context/DataContext"
 
-function Header(prop) {
-    const {taskList} = prop
+function Header() {
+    const {taskList} = useContext(bhenjneWalaData)
     return (
         <div className='w-full bg-black h-[32vh] flex items-center justify-center gap-[3vw] border-b-2 border-zinc-600'>
             <h1 className='text-[1.8vw] font-semibold'>To-Do-List</h1>

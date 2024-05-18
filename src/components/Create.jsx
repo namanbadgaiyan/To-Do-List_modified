@@ -1,15 +1,16 @@
 import { FaCirclePlus } from "react-icons/fa6";
 import { nanoid } from "nanoid";
+import { useContext } from "react";
+import { bhenjneWalaData } from "../context/DataContext";
 
 
-function Create(prop) {
-    const {taskList, settaskList, task, settask} = prop
+function Create() {
+    const {taskList, settaskList, task, settask} = useContext(bhenjneWalaData)
     
     const submitHandler = (e) => {
         e.preventDefault()
         
         const taskingen = {id: nanoid(), task, completed: false};
-        
         settaskList([...taskList, taskingen]);
         settask("");
         localStorage.setItem("taskList", JSON.stringify([...taskList, taskingen]));
