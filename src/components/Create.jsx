@@ -16,7 +16,7 @@ function Create() {
         localStorage.setItem("taskList", JSON.stringify([...taskList, taskingen]));
         
     }
-
+    
     return (
         <div className='flex items-center justify-around w-full px-4 py-9'>
             <form onSubmit={submitHandler}>
